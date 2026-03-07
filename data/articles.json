@@ -1,0 +1,23 @@
+[
+  {
+    "id": "7bfcf3d0-3902-46e1-bc6d-749efed9a3e5",
+    "slug": "the-ai-innovators-win-biz-ai",
+    "title": "The AI Innovators win Biz AI!!!",
+    "category": "Discipline",
+    "excerpt": "idek",
+    "content": "<p>Congrats to the AI Innovators for winning!!</p>",
+    "publishDate": "2026-03-05T16:21:51.767Z",
+    "featured": false,
+    "featuredImage": "/api/images/7bfcf3d0-3902-46e1-bc6d-749efed9a3e5.jpeg"
+  },
+  {
+    "id": "81e21f1f-2728-4fb2-9b6d-9aefc2a1cac0",
+    "slug": "aakash-is-cute",
+    "title": "Aakash is cute",
+    "excerpt": "Summary of Aakash's cuteness",
+    "content": "<p><strong><em>He's just so cute</em></strong></p>",
+    "publishDate": "2026-03-05T18:03:27.550Z",
+    "featuredImage": "/api/images/81e21f1f-2728-4fb2-9b6d-9aefc2a1cac0.png",
+    "featured": false
+  }
+]
