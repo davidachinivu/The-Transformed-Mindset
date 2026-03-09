@@ -32,7 +32,35 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Message must be between 10 and 5000 characters' }, { status: 400 })
     }
 
-    // If the environment isn't configured yet, keep the behavior safe for local dev.
+    // If Web3Forms is configured, send the submission there.
+    const web3FormsApiKey = process.env.WEB3FORMS_API_KEY
+    const web3FormsEndpoint = 'https://api.web3forms.com/submit'
+
+    if (web3FormsApiKey) {
+      const response = await fetch(web3FormsEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          apiKey: web3FormsApiKey,
+          name: body.name,
+          email: body.email,
+          subject: `New message from ${body.name} via The Transformed Mindset`,
+          message: body.message,
+        }),
+      })
+
+      if (!response.ok) {
+        const errorText = await response.text()
+        console.error('Web3Forms error:', response.status, errorText)
+        return NextResponse.json({ error: 'Failed to send message via Web3Forms' }, { status: 500 })
+      }
+
+      return NextResponse.json({ success: true, message: 'Message sent successfully' }, { status: 200 })
+    }
+
+    // If Web3Forms is not configured, fall back to sending via SMTP/Resend.
     const recipient = process.env.CONTACT_EMAIL_TO || process.env.EMAIL_TO
 
     if (!recipient) {
@@ -47,7 +75,7 @@ export async function POST(request: Request) {
       return NextResponse.json({
         success: true,
         message:
-          'Message received. (Email sending is not configured yet; set CONTACT_EMAIL_TO in your environment.)',
+          'Message received. (Email sending is not configured yet; set WEB3FORMS_API_KEY or CONTACT_EMAIL_TO in your environment.)',
       })
     }
 

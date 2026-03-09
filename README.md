@@ -48,3 +48,6 @@ This project was created as a digital showcase for a high school teacher  a plac
 ## Whats Next
 
 When ready to publish, the site can be deployed anywhere that supports Next.js (Vercel, Netlify, etc.). The content model is intentionally simple, so adding new articles or tweaks can be done without changing the code.
+
+### Contact Form
+This project sends contact form submissions via **Web3Forms** when `WEB3FORMS_API_KEY` is set in the environment. To enable it, configure a form in Web3Forms and set the key in your deployment settings (or in `.env.local` during local development).
