@@ -45,24 +45,36 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <div className="text-center">
-          <h1 className="text-5xl md:text-6xl font-serif font-bold text-gray-900 mb-6">
-            CHANGE YOUR MINDSET
-          </h1>
-          <p className="text-2xl md:text-3xl font-serif text-accent mb-8">
-            CHANGE YOUR OUTCOMES
-          </p>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-            A publication dedicated to mindset, discipline, growth, and life improvement. Get strategies and insights to
-            transform your life.
-          </p>
-          <Link
-            href="/articles"
-            className="inline-block px-8 py-4 bg-accent text-white font-semibold rounded-lg hover:bg-accent-dark transition"
-          >
-            Explore Articles
-          </Link>
+      <section className="relative overflow-hidden bg-gradient-to-b from-white via-slate-50 to-white">
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top,rgba(30,58,138,0.25),transparent_55%)] pointer-events-none" />
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 relative">
+          <div className="max-w-2xl mx-auto text-center">
+            <p className="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-semibold tracking-wide mb-6">
+              Thoughtful perspectives • Practical steps • Lasting habits
+            </p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-black tracking-tight text-slate-900 leading-tight">
+              Change your mindset,
+              <br className="hidden md:block" />
+              change your outcomes.
+            </h1>
+            <p className="mt-6 text-lg text-slate-600 leading-relaxed">
+              Practical articles and proven strategies to build discipline, foster growth, and unlock your potential. Discover new habits and mindsets you can apply today.
+            </p>
+            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/articles"
+                className="inline-flex items-center justify-center px-9 py-4 bg-accent text-white font-semibold rounded-lg shadow-md hover:bg-accent-dark transition"
+              >
+                Explore Articles
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center px-9 py-4 border border-slate-200 text-slate-700 font-semibold rounded-lg hover:bg-slate-50 transition"
+              >
+                Contact the Author
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -72,6 +84,48 @@ export default function Home() {
           <FeaturedArticle article={featuredArticle} />
         </section>
       )}
+
+      {/* How it works */}
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-serif font-bold text-gray-900">How it works</h2>
+          <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
+            Browse, learn, and take action. Each article is designed to help you build momentum and make progress.
+          </p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-3">
+          <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-md transition">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent mb-4">
+              <span className="text-xl">📖</span>
+            </div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">Read with intention</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Start with articles that match your goals and gain clarity on the next step to take.
+            </p>
+          </div>
+
+          <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-md transition">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent mb-4">
+              <span className="text-xl">📝</span>
+            </div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">Take action</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Apply practical frameworks and exercises that help you turn insights into habits.
+            </p>
+          </div>
+
+          <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-md transition">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent mb-4">
+              <span className="text-xl">📈</span>
+            </div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">Measure progress</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Track what works and adapt as you grow—small wins build into meaningful change.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Recent Articles */}
       {recentArticles.length > 0 && (
@@ -100,17 +154,19 @@ export default function Home() {
 
 
       {/* CTA Section */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-        <h2 className="text-3xl font-serif font-bold text-gray-900 mb-4">Ready to Transform?</h2>
-        <p className="text-gray-600 text-lg mb-8">
-          Let's start your journey. Send me a message to discuss how I can help you achieve your goals.
-        </p>
-        <Link
-          href="/contact"
-          className="inline-block px-8 py-4 bg-accent text-white font-semibold rounded-lg hover:bg-accent-dark transition"
-        >
-          Get in Touch
-        </Link>
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="rounded-2xl bg-slate-50 border border-slate-200 p-10 text-center">
+          <h2 className="text-3xl font-serif font-bold text-gray-900 mb-4">Ready to accelerate your growth?</h2>
+          <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
+            Reach out to start a conversation, ask a question, or share what you’re working on. I’m here to help you stay on track.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center px-9 py-4 bg-accent text-white font-semibold rounded-lg shadow-md hover:bg-accent-dark transition"
+          >
+            Get in touch
+          </Link>
+        </div>
       </section>
     </div>
   )
