@@ -1,5 +1,7 @@
 ﻿# The Transformed Mindset
 
+Live website: https://the-transformed-mindset.vercel.app/
+
 A clean-minded, minimal publication platform built for a high school teacher  designed to share mindset, discipline, growth, and life-improvement ideas in a modern, magazine-style format.
 
 This site was created as a personal project with an eye toward clarity, performance, and long-term maintenance. Its structured to be easy to update and extend, while staying fast and accessible to all readers.
